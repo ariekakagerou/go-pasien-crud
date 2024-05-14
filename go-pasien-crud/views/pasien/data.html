@@ -1,0 +1,15 @@
+{{ $nomor := 0 }} {{ range .pasien }}
+<tr>
+    {{ $nomor = add $nomor 1 }}
+    <td>{{ $nomor }}</td>
+    <td>{{ .NamaLengkap }}</td>
+    <td>{{ .JenisKelamin }}</td>
+    <td>{{ .TempatLahir }}, {{ .TanggalLahir }}</td>
+    <td>{{ .Alamat }}</td>
+    <td>{{ .NoHP }}</td>
+    <td>
+        <button data-id="{{ .Id }}" class="btn btn-danger btn-sm delete-pasien">Delete</button>
+        <button data-id="{{ .Id }}" class="btn btn-warning btn-sm edit-pasien">Edit</button>
+    </td>
+</tr>
+{{ end }}
